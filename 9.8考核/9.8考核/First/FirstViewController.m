@@ -32,6 +32,10 @@
     [self.navigationController pushViewController:movieViewController animated:YES];
 }
 
+- (void)viewDidDisappear:(BOOL)animated{
+    self.hidesBottomBarWhenPushed = NO;
+}
+
 /*
 #pragma mark - Navigation
 

@@ -23,7 +23,7 @@
 }
 
 - (void)layoutSubviews {
-    _firstSearchBar.frame = CGRectMake(10, 10, 300, 40);
+    _firstSearchBar.frame = CGRectMake(0, 10, 375, 40);
     _firstSearchBar.placeholder = @"找影视剧、影人、影院、演出、图书";
     
     _firstImage.frame = CGRectMake(0, 50, 375, 214);

@@ -17,7 +17,7 @@
 static NSString *str1 = @"FirstTableViewCell";
 static NSString *str2 = @"SecondTableViewCell";
 
-@interface MovieViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface MovieViewController ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 
 @property (nonatomic, strong)SecondView *secondView;
 @property (nonatomic, strong)FirstView *firstView;
@@ -36,17 +36,23 @@ static NSString *str2 = @"SecondTableViewCell";
     
     _firstView = [[FirstView alloc]init];
     _firstView.frame = CGRectMake(0, 0, 375, 254);
+    _firstView.firstSearchBar.delegate = self;
+    _firstView.firstSearchBar.enablesReturnKeyAutomatically = NO;
     [headView addSubview:_firstView];
     
     _secondView = [[SecondView alloc]init];
     _secondView.frame = CGRectMake(0, 254, 375, 300);
-    NowView *now = [[NowView alloc]init];
-    now.frame = CGRectMake(0, 0, 115, 300);
-    [_secondView.nowScrollView addSubview:now];
+    for (int i = 0; i < 4; i++) {
+        NowView *now = [[NowView alloc]init];
+        now.frame = CGRectMake(115 * i, 0, 115, 300);
+        [_secondView.nowScrollView addSubview:now];
+    }
     
-    WillView *will = [[WillView alloc]init];
-    will.frame = CGRectMake(0, 0, 115, 300);
-    [_secondView.willScrollView addSubview:will];
+    for (int i = 0; i < 4; i++) {
+        WillView *will = [[WillView alloc]init];
+        will.frame = CGRectMake(115 * i, 0, 115, 300);
+        [_secondView.willScrollView addSubview:will];
+    }
     [_secondView.willButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
     [_secondView.nowButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
     [headView addSubview:_secondView];
@@ -95,6 +101,12 @@ static NSString *str2 = @"SecondTableViewCell";
         return secondTableViewCell;
     }
 }
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [_firstView.firstSearchBar resignFirstResponder];
+}
+
+
 
 
 /*
