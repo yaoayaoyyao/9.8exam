@@ -13,15 +13,10 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     
-    _nowButton = [[UIButton alloc]init];
-    [self addSubview:_nowButton];
-    
-    _willButton = [[UIButton alloc]init];
-    [self addSubview:_willButton];
+    _secondSegmentedControl = [[UISegmentedControl alloc]initWithItems:[NSArray arrayWithObjects:@"正在热映", @"即将上映", nil]];
     
     _secondScrollView = [[UIScrollView alloc]init];
     [self addSubview:_secondScrollView];
-   
     
     _nowScrollView = [[UIScrollView alloc]init];
     
@@ -31,19 +26,18 @@
 }
 
 - (void)layoutSubviews {
-    _nowButton.frame = CGRectMake(10, 10, 100, 30);
-    [_nowButton setTitle:@"正在热映" forState:UIControlStateNormal];
-    _nowButton.tag = 10;
-    [_nowButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [_nowButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+
+    _secondSegmentedControl.frame = CGRectMake(10, 0, 200, 30);
+    [self addSubview:_secondSegmentedControl];
+    _secondSegmentedControl.selectedSegmentIndex = 0;
+    //在点击后是否恢复原样
+    _secondSegmentedControl.momentary = NO;
+    _secondSegmentedControl.layer.borderColor = [[UIColor clearColor]CGColor];
+    _secondSegmentedControl.tintColor = [UIColor clearColor];
+    [_secondSegmentedControl setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor grayColor] , NSFontAttributeName:[UIFont fontWithName:@"Helvetica" size:20]} forState:UIControlStateNormal];
+    [_secondSegmentedControl setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor], NSFontAttributeName:[UIFont fontWithName:@"Helvetica" size:20]} forState:UIControlStateSelected];
     
-    _willButton.frame = CGRectMake(130, 10, 100, 30);
-    [_willButton setTitle:@"即将上映" forState:UIControlStateNormal];
-    _willButton.tag = 11;
-    [_willButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [_willButton setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
-    
-    _secondScrollView.frame = CGRectMake(0, 30, 375, 300);
+    _secondScrollView.frame = CGRectMake(0, 10, 375, 300);
     _secondScrollView.contentSize = CGSizeMake(375, 300);
     _secondScrollView.tag = 1;
     _secondScrollView.pagingEnabled = YES;

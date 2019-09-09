@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SecondView : UIView
 
-@property (nonatomic, strong)UIButton *nowButton;
-@property (nonatomic, strong)UIButton *willButton;
+@property UISegmentedControl *secondSegmentedControl;
+
 @property (nonatomic, strong)UIScrollView *secondScrollView;
 
 @property (nonatomic, strong)UIScrollView *nowScrollView;

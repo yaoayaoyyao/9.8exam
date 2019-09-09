@@ -32,16 +32,19 @@ static NSString *str2 = @"SecondTableViewCell";
     // Do any additional setup after loading the view.
     
     UIView *headView = [[UIView alloc]init];
-    headView.frame = CGRectMake(0, 0, 375, 580);
+    headView.frame = CGRectMake(0, 0, 375, 584);
     
     _firstView = [[FirstView alloc]init];
-    _firstView.frame = CGRectMake(0, 0, 375, 254);
+    _firstView.frame = CGRectMake(0, 0, 375, 264);
     _firstView.firstSearchBar.delegate = self;
     _firstView.firstSearchBar.enablesReturnKeyAutomatically = NO;
     [headView addSubview:_firstView];
     
     _secondView = [[SecondView alloc]init];
-    _secondView.frame = CGRectMake(0, 254, 375, 300);
+    _secondView.frame = CGRectMake(0, 264, 375, 320);
+    
+    [_secondView.secondSegmentedControl addTarget:self action:@selector(changeTableView:) forControlEvents:UIControlEventValueChanged];
+    
     for (int i = 0; i < 4; i++) {
         NowView *now = [[NowView alloc]init];
         now.frame = CGRectMake(115 * i, 0, 115, 300);
@@ -53,13 +56,12 @@ static NSString *str2 = @"SecondTableViewCell";
         will.frame = CGRectMake(115 * i, 0, 115, 300);
         [_secondView.willScrollView addSubview:will];
     }
-    [_secondView.willButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
-    [_secondView.nowButton addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    
     [headView addSubview:_secondView];
     
     
     
-    _thirdTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 375, 1111) style:UITableViewStylePlain];
+    _thirdTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 375, 812) style:UITableViewStylePlain];
     [self.view addSubview:_thirdTableView];
     _thirdTableView.tableHeaderView = headView;
     _thirdTableView.delegate = self;
@@ -68,14 +70,30 @@ static NSString *str2 = @"SecondTableViewCell";
     [_thirdTableView registerClass:[SecondTableViewCell class] forCellReuseIdentifier:str2];
 }
 
-- (void)click:(UIButton *)btn {
-    if (btn.tag == 10) {
-        _secondView.secondScrollView.contentOffset = CGPointMake(0, 0);
+/*---------------------选择卡-----------------------*/
+- (void)changeTableView:(UISegmentedControl *)segmentedControl{
+    if (segmentedControl.selectedSegmentIndex == 0) {
+        [_secondView.secondScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
     }
-    if (btn.tag == 11) {
-        _secondView.secondScrollView.contentOffset = CGPointMake(375, 0);
+    else if (segmentedControl.selectedSegmentIndex == 1) {
+        [_secondView.secondScrollView setContentOffset:CGPointMake(375, 0) animated:YES];
     }
 }
+
+/*---------------------滚动视图-----------------------*/
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if (scrollView.tag == 1) {
+        if (scrollView.contentOffset.x == 0) {
+            _secondView.secondSegmentedControl.selectedSegmentIndex = 0;
+        }
+        else if (scrollView.contentOffset.x == 375) {
+            _secondView.secondSegmentedControl.selectedSegmentIndex = 1;
+        }
+    }
+}
+
+
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 10;
