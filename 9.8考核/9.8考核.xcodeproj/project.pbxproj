@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9E1455812326465400043575 /* 屏幕快照 2019-09-08 下午9.22.18.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E1455802326465400043575 /* 屏幕快照 2019-09-08 下午9.22.18.png */; };
+		9E719C262326576E00DDD52E /* 111.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E719C252326576E00DDD52E /* 111.png */; };
 		9ED05DBF232516FC009B44D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED05DBE232516FC009B44D5 /* AppDelegate.m */; };
 		9ED05DC2232516FD009B44D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED05DC1232516FD009B44D5 /* ViewController.m */; };
 		9ED05DC5232516FD009B44D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ED05DC3232516FD009B44D5 /* Main.storyboard */; };
@@ -57,7 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9E1455802326465400043575 /* 屏幕快照 2019-09-08 下午9.22.18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "屏幕快照 2019-09-08 下午9.22.18.png"; path = "../../../../.Trash/屏幕快照 2019-09-08 下午9.22.18.png"; sourceTree = "<group>"; };
+		9E719C252326576E00DDD52E /* 111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 111.png; sourceTree = "<group>"; };
 		9ED05DBA232516FC009B44D5 /* 9.8考核.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "9.8考核.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED05DBD232516FC009B44D5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9ED05DBE232516FC009B44D5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -287,7 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				9ED05E3123253456009B44D5 /* main_img2.png */,
-				9E1455802326465400043575 /* 屏幕快照 2019-09-08 下午9.22.18.png */,
+				9E719C252326576E00DDD52E /* 111.png */,
 				9ED05E2F232533A3009B44D5 /* guanzhu_img5.png */,
 				9ED05E1C232526F7009B44D5 /* 0A5408D6F1E7C3E4A0649AD980797367.png */,
 				9ED05E19232526F7009B44D5 /* 9E9EA2422DC99B085FBAEC4C62412B23.png */,
@@ -401,7 +401,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E1455812326465400043575 /* 屏幕快照 2019-09-08 下午9.22.18.png in Resources */,
 				9ED05E1F232526F7009B44D5 /* 11694888F8019C4B7971FA75CC26F8F3.png in Resources */,
 				9ED05E1E232526F7009B44D5 /* 9E9EA2422DC99B085FBAEC4C62412B23.png in Resources */,
 				9ED05E20232526F7009B44D5 /* 21EC110CC9CD54FFFE93FA662C5764BF.png in Resources */,
@@ -410,6 +409,7 @@
 				9ED05E21232526F7009B44D5 /* 0A5408D6F1E7C3E4A0649AD980797367.png in Resources */,
 				9ED05E30232533A3009B44D5 /* guanzhu_img5.png in Resources */,
 				9ED05DC7232516FD009B44D5 /* Assets.xcassets in Resources */,
+				9E719C262326576E00DDD52E /* 111.png in Resources */,
 				9ED05DC5232516FD009B44D5 /* Main.storyboard in Resources */,
 				9ED05E3223253456009B44D5 /* main_img2.png in Resources */,
 			);

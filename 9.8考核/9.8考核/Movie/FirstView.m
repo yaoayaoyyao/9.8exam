@@ -27,7 +27,7 @@
     _firstSearchBar.placeholder = @"找影视剧、影人、影院、演出、图书";
     
     _firstImage.frame = CGRectMake(0, 50, 375, 214);
-    _firstImage.image = [UIImage imageNamed:@"屏幕快照 2019-09-08 下午9.22.18"];
+    _firstImage.image = [UIImage imageNamed:@"111"];
     
 }
 
